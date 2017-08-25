@@ -1,0 +1,31 @@
+customer.list-customer:
+  path: '/customer/list-customer'
+  defaults:
+    _controller: '\Drupal\customer\Controller\CustomerController::lstCustomer'
+    _title: 'Danh Sách Khách Hàng'
+  requirements:
+    _permission: 'access content'
+
+customer.register:
+  path: '/customer/register'
+  defaults:
+    _form: '\Drupal\customer\Form\RegisterCustomerForm'
+    _title: 'Đăng Ký Khách Hàng Mới'
+  requirements:
+    _access: 'TRUE'
+
+customer.update:
+  path: '/customer/update/{id}'
+  defaults:
+    _form: '\Drupal\customer\Form\UpdateCustomerForm'
+    _title: 'Cập Nhật Thông Tin Khách Hàng'
+  requirements:
+    _access: 'TRUE'
+    
+customer.delete:
+  path: '/customer/delete/{id}'
+  defaults:
+    _form: '\Drupal\customer\Form\DeleteCustomerForm'
+    _title: 'Xóa Thông Tin Khách Hàng'
+  requirements:
+    _access: 'TRUE'

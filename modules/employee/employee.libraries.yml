@@ -1,0 +1,4 @@
+employee.style:
+  css:
+    theme:
+      css/employee.css: {}

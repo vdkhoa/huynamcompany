@@ -1,0 +1,15 @@
+sales.statistics:
+  path: '/sales/statistics'
+  defaults:
+    _controller: '\Drupal\sales\Controller\SalesController::lstSales'
+    _title: 'Thống Kê Bán Hàng'
+  requirements:
+    _permission: 'access content'
+
+sales.register:
+  path: '/sales/register'
+  defaults:
+    _form: '\Drupal\sales\Form\RegisterSalesForm'
+    _title: 'Bán Hàng'
+  requirements:
+    _access: 'TRUE'

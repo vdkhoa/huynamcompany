@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * This is the module sales.
+ */
+ 
+ use Drupal\Core\Database\Database;
+ 
+ function employee_theme() {
+  return [
+    'register_employee_form' => [
+      'render element' => 'form',
+    ],
+  ];
+ }

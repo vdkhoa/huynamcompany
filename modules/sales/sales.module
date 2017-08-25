@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * This is the module sales.
+ */
+ 
+ use Drupal\Core\Database\Database;
+ 
+ function sales_theme() {
+  return [
+    'register_sales_form' => [
+      'render element' => 'form',
+    ],
+  ];
+ }

@@ -1,0 +1,5 @@
+name: Commodity
+description: Module quản lý hàng hóa
+core: 8.x
+package: Custom
+type: module

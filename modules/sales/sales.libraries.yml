@@ -1,0 +1,4 @@
+sales.style:
+  css:
+    theme:
+      css/sales.css: {}

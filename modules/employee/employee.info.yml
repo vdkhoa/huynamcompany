@@ -1,0 +1,5 @@
+name: Employee
+description: Module quản lý nhân viên
+core: 8.x
+package: Custom
+type: module

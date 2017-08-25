@@ -1,0 +1,31 @@
+commodity.list-commodity:
+  path: '/commodity/list-commodity'
+  defaults:
+    _controller: '\Drupal\commodity\Controller\CommodityController::lstCommodity'
+    _title: 'Danh Sách Hàng Hóa'
+  requirements:
+    _permission: 'access content'
+    
+commodity.register:
+  path: '/commodity/register'
+  defaults:
+    _form: '\Drupal\commodity\Form\RegisterCommodityForm'
+    _title: 'Nhập Hàng Hóa Mới'
+  requirements:
+    _access: 'TRUE'
+    
+commodity.update:
+  path: '/commodity/update/{id}'
+  defaults:
+    _form: '\Drupal\commodity\Form\UpdateCommodityForm'
+    _title: 'Cập Nhật Thông Tin Hàng Hóa'
+  requirements:
+    _access: 'TRUE'
+    
+commodity.delete:
+  path: '/commodity/delete/{id}'
+  defaults:
+    _form: '\Drupal\commodity\Form\DeleteCommodityForm'
+    _title: 'Xóa Thông Tin Hàng Hóa'
+  requirements:
+    _access: 'TRUE'

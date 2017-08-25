@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @file
+ * Create table hn_employee
+ */
+
+ function employee_schema() {
+  $schema['employee'] = array(
+    'fields' => array(
+      'id'=>array(
+        'type'=>'serial',
+        'not null' => TRUE,
+      ),
+      'employee_code'=>array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ),
+      'employee_name'=>array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ),
+      'employee_address'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        ),
+      'employee_birthday'=>array(
+        'type' => 'varchar',
+        'length' => 8,
+        'not null' => FALSE,
+      ),
+      'employee_gender'=>array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => FALSE,
+      ),
+      'employee_mobiphone'=>array(
+        'type' => 'varchar',
+        'length' => 30,
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'uk_employee_employee_code' => array('employee_code')
+    )
+  );
+  
+  return $schema;
+ }
