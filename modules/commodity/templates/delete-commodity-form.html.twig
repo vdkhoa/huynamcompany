@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-2">
+      {{ form.submit }}
+    </div>
+    <div class="col-md-2">
+      {{ form.cancel }}
+    </div>
+  </div>
+{% endspaceless %}

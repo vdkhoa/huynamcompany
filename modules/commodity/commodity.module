@@ -7,12 +7,15 @@
  
  use Drupal\Core\Database\Database;
  
- function customer_theme() {
+ function commodity_theme() {
   return [
-    'register_customer_form' => [
+    'register_commodity_form' => [
       'render element' => 'form',
     ],
-    'update_customer_form' => [
+    'update_commodity_form' => [
+      'render element' => 'form',
+    ],
+    'delete_commodity_form' => [
       'render element' => 'form',
     ],
   ];

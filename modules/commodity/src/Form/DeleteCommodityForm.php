@@ -1,66 +1,67 @@
 <?php
+
 namespace Drupal\commodity\Form;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Form\ConfirmFormBase;
+use Drupal\Core\Form\FormBase;
 use Drupal\Core\Url;
 
-class DeleteCommodityForm extends ConfirmFormBase
-{
-  public $id;
-  
-  /**
-   * {@inheritdoc}
-   */
-  public function getFormId() {
-    return 'delete';
-  }
-  
-  public function getQuestion() {
-    return t('Bạn có chắc chắn muốn xóa thông tin hàng hóa này không?');
-  }
-  public function getCancelUrl() {
-    return new Url('commodity.list-commodity');
-  }
+class DeleteCommodityForm extends FormBase {
+ public $id;
  
-  /**
-   * {@inheritdoc}
-   */
-  public function getConfirmText() {
-    return t('Yes');
-  }
-  /**
-   * {@inheritdoc}
-   */
-  public function getCancelText() {
-    return t('Cancel');
-  }
+ /**
+  * @ERROR!!!
+  */
+ public function getFormId(){
+  return 'delete';
+ }
+ 
+ /**
+  * @ERROR!!!
+  */
+ public function buildForm(array $form, FormStateInterface $form_state, $id = NULL){
+  $this->id = $id;
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => 'Delete' 
+  ];
   
-  /**
-   * {@inheritdoc}
-   */
-  public function buildForm(array $form, FormStateInterface $form_state, $id = NULL) {
-    $this->id = $id;
-    return parent::buildForm($form, $form_state);
-  }
+  $form['cancel'] = [
+    '#title' => $this->t('Cancel'),
+    '#type' => 'link',
+    '#attributes' => array(
+      'class' => array(
+        'btn btn-primary' 
+      ) 
+    ),
+    '#url' => Url::fromRoute('commodity.list-commodity') 
+  ];
   
-  /**
-   * {@inheritdoc}
-   */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    parent::validateForm($form, $form_state);
-  }
+  $form['#theme'] = 'delete_commodity_form';
+  $form['#attached'] = array(
+    'library' => array(
+      'commodity/commodity.style' 
+    ) 
+  );
   
-  /**
-   * {@inheritdoc}
-   */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-    $query = \Drupal::database();
-    $query->delete('commodity')
-          ->condition('id',$this->id)
-          ->execute();
-    drupal_set_message("Xóa Thông Tin Hàng Hóa Thành Công");
-    $form_state->setRedirect('commodity.list-commodity');
-  }
+  return $form;
+ }
+ 
+ /**
+  * @ERROR!!!
+  */
+ public function validateForm(array &$form, FormStateInterface $form_state){
+  parent::validateForm($form,$form_state);
+ }
+ 
+ /**
+  * @ERROR!!!
+  */
+ public function submitForm(array &$form, FormStateInterface $form_state){
+  $query = \Drupal::database();
+  $query->delete('commodity')->condition('id',$this->id)->execute();
+  drupal_set_message("Xóa Thông Tin Hàng Hóa Thành Công");
+  $form_state->setRedirect('commodity.list-commodity');
+ }
 }
 

@@ -1,0 +1,4 @@
+commodity.style:
+  css:
+    theme:
+      css/commodity.css: {}
