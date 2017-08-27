@@ -14,7 +14,7 @@ class RegisterCommodityForm extends FormBase {
  public function getFormId(){
   return 'register';
  }
- 
+
  /**
   * @ERROR!!!
   */
@@ -25,42 +25,45 @@ class RegisterCommodityForm extends FormBase {
    $query = $conn->select('commodity','com')->condition('id',$_GET['id'])->fields('com');
    $record = $query->execute()->fetchAssoc();
   }
-  
+
   $form['commodity_code'] = array(
     '#type' => 'textfield',
-    '#required' => TRUE 
+    '#required' => TRUE ,
+    '#maxlength' => 10,
   );
-  
+
   $form['commodity_name'] = array(
     '#type' => 'textfield',
-    '#required' => TRUE 
+    '#required' => TRUE,
+    '#maxlength' => 50,
   );
-  
+
   $form['commodity_price'] = array(
-    '#type' => 'textfield' 
+    '#type' => 'textfield',
+    '#maxlength' => 6,
   );
-  
+
   $form['submit'] = [
     '#type' => 'submit',
-    '#value' => 'save' 
+    '#value' => 'save'
   ];
-  
+
   $form['#theme'] = 'register_commodity_form';
   $form['#attached'] = array(
     'library' => array(
-      'commodity/commodity.style' 
-    ) 
+      'commodity/commodity.style'
+    )
   );
-  
+
   return $form;
  }
- 
+
  /**
   * @ERROR!!!
   */
  public function validateForm(array &$form, FormStateInterface $form_state){
  }
- 
+
  /**
   * @ERROR!!!
   */
@@ -69,15 +72,15 @@ class RegisterCommodityForm extends FormBase {
   $commodity_code = $field['commodity_code'];
   $commodity_name = $field['commodity_name'];
   $commodity_price = $field['commodity_price'];
-  
+
   if (isset($_GET['id'])) {
   } else {
    $field = array(
      'commodity_code' => $commodity_code,
      'commodity_name' => $commodity_name,
-     'commodity_price' => $commodity_price 
+     'commodity_price' => $commodity_price
    );
-   
+
    $query = \Drupal::database();
    $query->insert('commodity')->fields($field)->execute();
    drupal_set_message("Đăng Ký Thành Công");

@@ -14,7 +14,7 @@ class UpdateCommodityForm extends FormBase {
  public function getFormId(){
   return 'update';
  }
- 
+
  /**
   * @ERROR!!!
   */
@@ -26,44 +26,48 @@ class UpdateCommodityForm extends FormBase {
    $query = $conn->select('commodity','com')->condition('id',$this->id)->fields('com');
    $record = $query->execute()->fetchAssoc();
   }
+
   $form['commodity_code'] = array(
     '#type' => 'textfield',
     '#required' => TRUE,
-    '#default_value' => $record['commodity_code'] 
+    '#maxlength' => 10,
+    '#default_value' => $record['commodity_code']
   );
-  
+
   $form['commodity_name'] = array(
     '#type' => 'textfield',
     '#required' => TRUE,
-    '#default_value' => $record['commodity_name'] 
+    '#maxlength' => 50,
+    '#default_value' => $record['commodity_name']
   );
-  
+
   $form['commodity_price'] = array(
     '#type' => 'textfield',
-    '#default_value' => $record['commodity_price'] 
+    '#maxlength' => 6,
+    '#default_value' => $record['commodity_price']
   );
-  
+
   $form['submit'] = [
     '#type' => 'submit',
-    '#value' => 'save' 
+    '#value' => 'save'
   ];
-  
+
   $form['#theme'] = 'update_commodity_form';
   $form['#attached'] = array(
     'library' => array(
-      'commodity/commodity.style' 
-    ) 
+      'commodity/commodity.style'
+    )
   );
-  
+
   return $form;
  }
- 
+
  /**
   * @ERROR!!!
   */
  public function validateForm(array &$form, FormStateInterface $form_state){
  }
- 
+
  /**
   * @ERROR!!!
   */
@@ -72,14 +76,14 @@ class UpdateCommodityForm extends FormBase {
   $commodity_code = $field['commodity_code'];
   $commodity_name = $field['commodity_name'];
   $commodity_price = $field['commodity_price'];
-  
+
   if (isset($this->id)) {
    $field = array(
      'commodity_code' => $commodity_code,
      'commodity_name' => $commodity_name,
-     'commodity_price' => $commodity_price 
+     'commodity_price' => $commodity_price
    );
-   
+
    $query = \Drupal::database();
    $query->update('commodity')->fields($field)->condition('id',$this->id)->execute();
    drupal_set_message("Cập Nhật Thành Công");

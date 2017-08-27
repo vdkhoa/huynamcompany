@@ -21,18 +21,18 @@ class CustomerController extends ControllerBase {
     'customer_represent' => t('Người Đại Diện'),
     'customer_mobiphone' => t('Số Điện Thoại'),
     'opt' => t(''),
-    'opt1' => t('') 
+    'opt1' => t('')
   );
-  
+
   // select records from table
   $query = \Drupal::database()->select('customer','cus');
-  $query->fields('cus',[ 
+  $query->fields('cus',[
     'id',
     'customer_code',
     'customer_name',
     'customer_address',
     'customer_represent',
-    'customer_mobiphone' 
+    'customer_mobiphone'
   ]);
   $results = $query->execute()->fetchAll();
   $rows = array ();
@@ -48,18 +48,18 @@ class CustomerController extends ControllerBase {
      'customer_represent' => $data->customer_represent,
      'customer_mobiphone' => $data->customer_mobiphone,
      \Drupal::l('Delete',$delete),
-     \Drupal::l('Edit',$edit) 
+     \Drupal::l('Edit',$edit)
    );
   }
-  
+
   // display data in site
-  $form['table'] = [ 
+  $form['table'] = [
     '#type' => 'table',
     '#header' => $header_table,
     '#rows' => $rows,
-    '#empty' => t('No users found') 
+    '#empty' => t('No users found')
   ];
-  
+
   return $form;
  }
 }

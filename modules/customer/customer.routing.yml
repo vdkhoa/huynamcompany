@@ -1,5 +1,5 @@
-customer.list-customer:
-  path: '/customer/list-customer'
+customer.list:
+  path: '/customer/list'
   defaults:
     _controller: '\Drupal\customer\Controller\CustomerController::lstCustomer'
     _title: 'Danh Sách Khách Hàng'
@@ -9,7 +9,7 @@ customer.list-customer:
 customer.register:
   path: '/customer/register'
   defaults:
-    _form: '\Drupal\customer\Form\RegisterCustomerForm'
+    _form: '\Drupal\customer\Form\CustomerRegisterForm'
     _title: 'Đăng Ký Khách Hàng Mới'
   requirements:
     _access: 'TRUE'
@@ -17,7 +17,7 @@ customer.register:
 customer.update:
   path: '/customer/update/{id}'
   defaults:
-    _form: '\Drupal\customer\Form\UpdateCustomerForm'
+    _form: '\Drupal\customer\Form\CustomerUpdateForm'
     _title: 'Cập Nhật Thông Tin Khách Hàng'
   requirements:
     _access: 'TRUE'
@@ -25,7 +25,7 @@ customer.update:
 customer.delete:
   path: '/customer/delete/{id}'
   defaults:
-    _form: '\Drupal\customer\Form\DeleteCustomerForm'
+    _form: '\Drupal\customer\Form\CustomerDeleteForm'
     _title: 'Xóa Thông Tin Khách Hàng'
   requirements:
     _access: 'TRUE'

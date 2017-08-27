@@ -42,9 +42,14 @@
         'not null' => TRUE,
       ),
       'user' => array(
-      	'type' => 'varchar',
-      	'length' => 255,
-      	'not null' => TRUE,
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'ship' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
       ),
       'delete_flg' => array(
       	'type' => 'int',

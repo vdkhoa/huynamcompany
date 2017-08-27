@@ -7,16 +7,16 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Database\Database;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class RegisterCustomerForm extends FormBase {
+class CustomerRegisterForm extends FormBase {
  /**
-  * @ERROR!!!
+  * {@inheritdoc}
   */
  public function getFormId() {
-  return 'register';
+  return 'register_form';
  }
- 
+
  /**
-  * @ERROR!!!
+  * {@inheritdoc}
   */
  public function buildForm(array $form, FormStateInterface $form_state) {
   $conn = Database::getConnection();
@@ -25,52 +25,63 @@ class RegisterCustomerForm extends FormBase {
    $query = $conn->select('customer','cus')->condition('id',$_GET['id'])->fields('cus');
    $record = $query->execute()->fetchAssoc();
   }
-  
+
   $form['customer_code'] = array (
     '#type' => 'textfield',
-    '#required' => TRUE 
+    '#maxlength' => 10,
   );
-  
+
   $form['customer_name'] = array (
     '#type' => 'textfield',
-    '#required' => TRUE 
+    '#maxlength' => 50
   );
-  
+
   $form['customer_address'] = array (
-    '#type' => 'textfield' 
+    '#type' => 'textarea',
+    '#maxlength' => 255
   );
-  
+
   $form['customer_represent'] = array (
-    '#type' => 'textfield' 
+    '#type' => 'textfield',
+    '#maxlength' => 50
   );
-  
+
   $form['customer_mobiphone'] = array (
-    '#type' => 'textfield' 
+    '#type' => 'textfield',
+    '#maxlength' => 11
   );
-  
-  $form['submit'] = [ 
+
+  $form['submit'] = [
     '#type' => 'submit',
-    '#value' => 'save' 
+    '#value' => 'save'
   ];
-  
-  $form['#theme'] = 'register_customer_form';
+
+  $form['#theme'] = 'customer_register_form';
   $form['#attached'] = array (
     'library' => array (
-      'customer/customer.style' 
-    ) 
+      'customer/customer.style'
+    )
   );
-  
+
   return $form;
  }
- 
+
  /**
-  * @ERROR!!!
+  * {@inheritdoc}
   */
  public function validateForm(array &$form, FormStateInterface $form_state) {
+  $customer = $form_state->getValues();
+  if ($customer['customer_code'] === '') {
+   $form_state->setErrorByName('customer_code', t('Xin hãy nhập mã khách hàng.'));
+  } else if ($customer['customer_name'] === '') {
+   $form_state->setErrorByName('customer_name', t('Xin hãy nhập tên khách hàng.'));
+  }
+
+  parent::validateForm($form, $form_state);
  }
- 
+
  /**
-  * @ERROR!!!
+  * {@inheritdoc}
   */
  public function submitForm(array &$form, FormStateInterface $form_state) {
   $field = $form_state->getValues();
@@ -86,13 +97,11 @@ class RegisterCustomerForm extends FormBase {
      'customer_name' => $customer_name,
      'customer_address' => $customer_address,
      'customer_represent' => $customer_birthday,
-     'customer_mobiphone' => $customer_mobiphone 
+     'customer_mobiphone' => $customer_mobiphone
    );
    $query = \Drupal::database();
    $query->insert('customer')->fields($field)->execute();
    drupal_set_message("Đăng Ký Thành Công");
-   $response = new RedirectResponse("/customer/list-customer");
-   $response->send();
   }
  }
 }
