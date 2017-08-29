@@ -1,0 +1,10 @@
+shipping.style:
+  css:
+    theme:
+      css/shipping.css: {}
+      css/dataTables/jquery.dataTables.min.css: {}
+  js:
+    js/shipping.js: {}
+    js/dataTables/jquery.dataTables.min.js: {}
+  dependencies:
+    - core/jquery

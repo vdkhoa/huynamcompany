@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-2">
+     <label class="control-label form-required">Chuyến Hàng:</label>
+    </div>
+    <div class="col-md-6">
+      {{ form.ship }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      {{ form.driver }}
+    </div>
+    <div class="col-md-4">
+      {{ form.sub_driver1 }}
+    </div>
+    <div class="col-md-4">
+      {{ form.sub_driver2 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input id="add_customer" type="button" value="Thêm Khách Hàng" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table id="table_shipping" class="display" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>Khách Hàng</th>
+            <th>Mi</th>
+            <th>Bia</th>
+            <th>Xay</th>
+            <th>Cắt</th>
+            <th>Rượu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ form.customer_code }}</td>
+            <td>{{ form.mi_quantity }}</td>
+            <td>{{ form.bia_quantity }}</td>
+            <td>{{ form.xay_quantity }}</td>
+            <td>{{ form.cat_quantity }}</td>
+            <td>{{ form.ruou_quantity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      {{ form.submit }}
+    </div>
+  </div>
+{% endspaceless %}

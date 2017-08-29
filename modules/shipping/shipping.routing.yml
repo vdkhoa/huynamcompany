@@ -1,0 +1,15 @@
+shipping.display:
+  path: '/shipping/display'
+  defaults:
+    _controller: '\Drupal\shipping\Controller\ShippingController::display'
+    _title: 'Lịch Giao Hàng'
+  requirements:
+    _permission: 'access content'
+
+shipping.register:
+  path: '/shipping'
+  defaults:
+    _form: '\Drupal\shipping\Form\ShippingForm'
+    _title: 'Lịch Giao Hàng'
+  requirements:
+    _access: 'TRUE'

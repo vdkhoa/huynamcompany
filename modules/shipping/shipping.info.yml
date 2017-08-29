@@ -1,0 +1,5 @@
+name: Shipping
+description: Module quản lý giao hàng
+core: 8.x
+package: Custom
+type: module

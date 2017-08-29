@@ -1,0 +1,119 @@
+<?php
+
+/**
+ * @file
+ * Create table hn_shipping
+ */
+
+ function shipping_schema() {
+  $schema['shipping'] = array(
+    'fields' => array(
+      'id'=>array(
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'ship' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'customer_code'=>array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ),
+      'order' => array(
+        'type' => 'numeric',
+        'precision' => 2,
+        'scale' => 0,
+        'not null' => TRUE,
+      ),
+      'mi_quantity' => array(
+       'type' => 'int',
+       'not null' => TRUE,
+       'default' => 0,
+      ),
+      'mi_price' => array(
+       'type' => 'int',
+       'not null' => TRUE,
+       'default' => 0,
+      ),
+      'bia_quantity' => array(
+       'type' => 'int',
+       'not null' => TRUE,
+       'default' => 0,
+      ),
+      'bia_price' => array(
+       'type' => 'int',
+       'not null' => TRUE,
+       'default' => 0,
+      ),
+      'xay_quantity' => array(
+       'type' => 'int',
+       'not null' => TRUE,
+       'default' => 0,
+      ),
+      'xay_price' => array(
+       'type' => 'int',
+       'not null' => TRUE,
+       'default' => 0,
+      ),
+      'cat_quantity' => array(
+       'type' => 'int',
+       'not null' => TRUE,
+       'default' => 0,
+      ),
+      'cat_price' => array(
+       'type' => 'int',
+       'not null' => TRUE,
+       'default' => 0,
+      ),
+      'ruou_quantity' => array(
+       'type' => 'int',
+       'not null' => TRUE,
+       'default' => 0,
+      ),
+      'ruou_price' => array(
+       'type' => 'int',
+       'not null' => TRUE,
+       'default' => 0,
+      ),
+      'driver' => array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => FALSE,
+      ),
+      'sub_driver1' => array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => FALSE,
+      ),
+      'sub_driver2' => array(
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => FALSE,
+      ),
+      'mode' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'create_date' => array(
+       'type' => 'datetime',
+       'pgsql_type' => 'timestamp',
+       'not null' => TRUE,
+      ),
+      'update_date' => array(
+        'type' => 'datetime',
+        'pgsql_type' => 'timestamp',
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'uk_shipping_1' => array('ship', 'customer_code')
+    )
+  );
+  
+  return $schema;
+ }

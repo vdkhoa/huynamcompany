@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * This is the module shipping.
+ */
+ 
+ use Drupal\Core\Database\Database;
+ 
+ function shipping_theme() {
+  return [
+    'shipping_form' => [
+      'render element' => 'form',
+    ],
+  ];
+ }
