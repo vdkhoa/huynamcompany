@@ -10,6 +10,10 @@
  function shipping_theme() {
   return [
     'shipping_form' => [
+      'variables' => [
+        'ship_form' => NULL,
+        'list_ship' => NULL,
+      ],
       'render element' => 'form',
     ],
   ];

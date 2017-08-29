@@ -4,32 +4,32 @@
  * 
  */
 #}
-{{ form.form_build_id }}
-{{ form.form_token }}
-{{ form.form_id }}
+{{ ship_form.form_build_id }}
+{{ ship_form.form_token }}
+{{ ship_form.form_id }}
 {% spaceless %}
   <div class="row">
     <div class="col-md-2">
      <label class="control-label form-required">Chuyến Hàng:</label>
     </div>
     <div class="col-md-6">
-      {{ form.ship }}
+      {{ ship_form.ship }}
     </div>
   </div>
   <div class="row">
     <div class="col-md-4">
-      {{ form.driver }}
+      {{ ship_form.driver }}
     </div>
     <div class="col-md-4">
-      {{ form.sub_driver1 }}
+      {{ ship_form.sub_driver1 }}
     </div>
     <div class="col-md-4">
-      {{ form.sub_driver2 }}
+      {{ ship_form.sub_driver2 }}
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <input id="add_customer" type="button" value="Thêm Khách Hàng" />
+      <input id="add_customer" class="btn btn-primary" type="button" value="Thêm Khách Hàng" />
     </div>
   </div>
   <div class="row">
@@ -46,21 +46,23 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>{{ form.customer_code }}</td>
-            <td>{{ form.mi_quantity }}</td>
-            <td>{{ form.bia_quantity }}</td>
-            <td>{{ form.xay_quantity }}</td>
-            <td>{{ form.cat_quantity }}</td>
-            <td>{{ form.ruou_quantity }}</td>
-          </tr>
+          {% for ship in list_ship %}
+            <tr>
+              <td>{{ ship.customer_name }}</td>
+              <td>{{ ship.mi_quantity }}</td>
+              <td>{{ ship.bia_quantity }}</td>
+              <td>{{ ship.xay_quantity }}</td>
+              <td>{{ ship.cat_quantity }}</td>
+              <td>{{ ship.ruou_quantity }}</td>
+            </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      {{ form.submit }}
+      {{ ship_form.submit }}
     </div>
   </div>
 {% endspaceless %}
