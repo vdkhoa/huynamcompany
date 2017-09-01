@@ -2,3 +2,9 @@ customer.style:
   css:
     theme:
       css/customer.css: {}
+      css/dataTables/jquery.dataTables.min.css: {}
+  js:
+    js/customer.js: {}
+    js/dataTables/jquery.dataTables.min.js: {}
+  dependencies:
+    - core/jquery

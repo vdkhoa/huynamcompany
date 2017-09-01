@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-12">
+      <table id="tbl_customer" class="display" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>Mã Khách Hàng</th>
+            <th>Họ Tên Khách Hàng</th>
+            <th>Địa Chỉ Khách Hàng</th>
+            <th>Người Đại Diện</th>
+            <th>Số Điện Thoại</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+          {% for customer in list_customer %}
+            <tr>
+              <td>{{ customer.customer_code }}</td>
+              <td>{{ customer.customer_name }}</td>
+              <td>{{ customer.customer_address }}</td>
+              <td>{{ customer.customer_represent }}</td>
+              <td>{{ customer.customer_mobiphone }}</td>
+              <td>{{ customer.edit }}</td>
+              <td>{{ customer.delete }}</td>
+            </tr>
+          {% endfor %}
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endspaceless %}

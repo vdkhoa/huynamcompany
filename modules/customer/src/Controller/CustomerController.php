@@ -34,6 +34,7 @@ class CustomerController extends ControllerBase {
     'customer_represent',
     'customer_mobiphone'
   ]);
+  $query->orderBy('customer_name');
   $results = $query->execute()->fetchAll();
   $rows = array ();
   foreach ( $results as $data ) {
@@ -47,19 +48,26 @@ class CustomerController extends ControllerBase {
      'customer_address' => $data->customer_address,
      'customer_represent' => $data->customer_represent,
      'customer_mobiphone' => $data->customer_mobiphone,
-     \Drupal::l('Delete',$delete),
-     \Drupal::l('Edit',$edit)
+     'delete' => \Drupal::l('Delete',$delete),
+     'edit' => \Drupal::l('Edit',$edit)
    );
   }
 
-  // display data in site
-  $form['table'] = [
-    '#type' => 'table',
-    '#header' => $header_table,
-    '#rows' => $rows,
-    '#empty' => t('No users found')
-  ];
+//   // display data in site
+//   $form['table'] = [
+//     '#type' => 'table',
+//     '#header' => $header_table,
+//     '#rows' => $rows,
+//     '#empty' => t('No users found')
+//   ];
+  $build['#theme'] = 'customer_list';
+  $build['#list_customer'] = $rows;
+  $build['#attached'] = array(
+    'library' => array(
+      'customer/customer.style'
+    )
+  );
 
-  return $form;
+  return $build;
  }
 }

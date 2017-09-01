@@ -19,5 +19,11 @@ function customer_theme() {
    'customer_delete_form' => [
      'render element' => 'form',
    ],
+   'customer_list' => [
+      'variables' => [
+        'list_customer' => NULL,
+      ],
+      'render element' => 'form',
+    ],
  ];
 }
