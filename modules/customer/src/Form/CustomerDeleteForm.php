@@ -10,13 +10,17 @@ class CustomerDeleteForm extends FormBase {
  public $id;
 
  /**
-  * @ERROR!!!
+  * (non-PHPdoc)
+  * @see \Drupal\Core\Form\FormInterface::getFormId()
   */
  public function getFormId(){
   return 'delete_form';
  }
 
  /**
+  *
+  * (non-PHPdoc)
+  * @see \Drupal\Core\Form\FormInterface::buildForm()
   */
  public function buildForm(array $form, FormStateInterface $form_state, $id = NULL){
   $this->id = $id;
@@ -84,20 +88,26 @@ class CustomerDeleteForm extends FormBase {
  }
 
  /**
-  * @ERROR!!!
+  * (non-PHPdoc)
+  * @see \Drupal\Core\Form\FormBase::validateForm()
   */
  public function validateForm(array &$form, FormStateInterface $form_state){
   parent::validateForm($form,$form_state);
  }
 
  /**
-  * @ERROR!!!
+  * (non-PHPdoc)
+  * @see \Drupal\Core\Form\FormInterface::submitForm()
   */
  public function submitForm(array &$form, FormStateInterface $form_state){
-  $query = \Drupal::database();
-  $query->delete('customer')->condition('id',$this->id)->execute();
-  drupal_set_message("Xóa Thông Tin Khách Hàng Thành Công");
-  $form_state->setRedirect('customer.list');
+   try {
+     $query = \Drupal::database();
+     $query->delete('customer')->condition('id',$this->id)->execute();
+     drupal_set_message("Xóa Thông Tin Khách Hàng Thành Công");
+     $form_state->setRedirect('customer.list');
+   } catch (Exception $e) {
+     drupal_set_message("Xóa Thông Tin Thất Bại.");
+   }
  }
 }
 

@@ -5,12 +5,13 @@ namespace Drupal\customer\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Database\Database;
+use Drupal\Core\Url;
 
 class CustomerUpdateForm extends FormBase {
-
   public $id;
   /**
    * (non-PHPdoc)
+   *
    * @see \Drupal\Core\Form\FormInterface::getFormId()
    */
   public function getFormId(){
@@ -19,6 +20,7 @@ class CustomerUpdateForm extends FormBase {
 
   /**
    * (non-PHPdoc)
+   *
    * @see \Drupal\Core\Form\FormInterface::buildForm()
    */
   public function buildForm(array $form, FormStateInterface $form_state, $id = NULL){
@@ -65,6 +67,17 @@ class CustomerUpdateForm extends FormBase {
         '#value' => 'save'
     ];
 
+    $form['cancel'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Cancel'),
+        '#attributes' => array(
+            'class' => array(
+                'btn btn-primary'
+            )
+        ),
+        '#url' => Url::fromRoute('customer.list')
+    ];
+
     $form['#theme'] = 'customer_update_form';
     $form['#attached'] = array(
         'library' => array(
@@ -77,6 +90,7 @@ class CustomerUpdateForm extends FormBase {
 
   /**
    * (non-PHPdoc)
+   *
    * @see \Drupal\Core\Form\FormBase::validateForm()
    */
   public function validateForm(array &$form, FormStateInterface $form_state){
@@ -90,6 +104,7 @@ class CustomerUpdateForm extends FormBase {
 
   /**
    * (non-PHPdoc)
+   *
    * @see \Drupal\Core\Form\FormInterface::submitForm()
    */
   public function submitForm(array &$form, FormStateInterface $form_state){
@@ -125,11 +140,11 @@ class CustomerUpdateForm extends FormBase {
    * @param unknown $customer_code
    * @return \Drupal\Core\Database\A
    */
-  public function getCustomerCode($customer_code) {
+  public function getCustomerCode($customer_code){
     try {
-      $query = db_select('customer', 'cus');
+      $query = db_select('customer','cus');
       $query->condition('customer_code',$customer_code);
-      $query->addField('cus', 'customer_code');
+      $query->addField('cus','customer_code');
       return $query->execute()->fetchField();
     } catch (Exception $e) {
       drupal_set_message(t("Lỗi hệ thống."));
