@@ -4,7 +4,7 @@ customer.list:
     _controller: '\Drupal\customer\Controller\CustomerController::lstCustomer'
     _title: 'Danh Sách Khách Hàng'
   requirements:
-    _permission: 'access content'
+    _permission: 'customer list'
 
 customer.register:
   path: '/customer/register'
@@ -12,7 +12,7 @@ customer.register:
     _form: '\Drupal\customer\Form\CustomerRegisterForm'
     _title: 'Đăng Ký Khách Hàng Mới'
   requirements:
-    _access: 'TRUE'
+    _permission: 'customer register'
 
 customer.update:
   path: '/customer/update/{id}'

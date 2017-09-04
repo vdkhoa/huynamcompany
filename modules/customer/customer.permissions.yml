@@ -1,0 +1,5 @@
+customer register:
+  title: 'Register Customer'
+customer list:
+  title: 'List Customer'
+  restrict access: true

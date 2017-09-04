@@ -17,7 +17,6 @@ class CustomerDeleteForm extends FormBase {
  }
 
  /**
-  * @ERROR!!!
   */
  public function buildForm(array $form, FormStateInterface $form_state, $id = NULL){
   $this->id = $id;
