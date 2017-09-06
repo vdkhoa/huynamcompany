@@ -1,11 +1,12 @@
 <?php
 
+use Drupal\Core\Database\Database;
 /**
  * @file
  * Create table hn_customer
  */
 
- function customer_schema() {
+function customer_schema() {
   $schema['customer'] = array(
     'fields' => array(
       'id'=>array(
@@ -37,6 +38,12 @@
         'length' => 30,
         'not null' => FALSE,
       ),
+      'customer_debt' => array(
+        'type' => 'int',
+        'description' => "LOAI CONG NO",
+        'default' => 0,
+        'not null' => TRUE,
+      ),
     ),
     'primary key' => array('id'),
     'unique keys' => array(
@@ -45,4 +52,4 @@
   );
   
   return $schema;
- }
+}

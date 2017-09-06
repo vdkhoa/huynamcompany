@@ -8,35 +8,42 @@
 {{ form.form_token }}
 {{ form.form_id }}
 {% spaceless %}
-  <div class="row">
-    <div class="col-md-12">
-     {{ form.customer_code }}
+    <div class="row">
+        <div class="col-md-12">
+            {{ form.customer_code }}
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-     {{ form.customer_name }}
+    <div class="row">
+        <div class="col-md-12">
+            {{ form.customer_name }}
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-     {{ form.customer_address }}
+    <div class="row">
+        <div class="col-md-12">
+            {{ form.customer_address }}
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-     {{ form.customer_represent }}
+    <div class="row">
+        <div class="col-md-12">
+            {{ form.customer_represent }}
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-     {{ form.customer_mobiphone }}
+    <div class="row">
+        <div class="col-md-12">
+            {{ form.customer_mobiphone }}
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      {{ form.submit }}
-      {{ form.cancel }}
+    <div class="row">
+        <div class="col-md-12">
+            <td>
+                {{ form.customer_debt }}
+            </td>
+        </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="col-md-12">
+            {{ form.submit }}
+            {{ form.cancel }}
+        </div>
+    </div>
 {% endspaceless %}
