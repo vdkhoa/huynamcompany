@@ -2,9 +2,13 @@ customer.style:
   css:
     theme:
       css/customer.css: {}
-      css/dataTables/jquery.dataTables.min.css: {}
+      ../../libraries/css/bootstrap-table/bootstrap-table.css: {}
+      ../../libraries/css/bootstrap-table/bootstrap-table.min.css: {}
   js:
     js/customer.js: {}
-    js/dataTables/jquery.dataTables.min.js: {}
+    ../../libraries/js/bootstrap-table/bootstrap-table.js: {}
+    ../../libraries/js/bootstrap-table/bootstrap-table.min.js: {}
+    ../../libraries/js/bootstrap-table/bootstrap-table-vi-VN.js: {}
+    ../../libraries/js/bootstrap-table/bootstrap-table-vi-VN.min.js: {}
   dependencies:
     - core/jquery

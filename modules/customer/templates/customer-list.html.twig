@@ -1,50 +1,31 @@
 {#
 /**
  * @file
- * 
  */
 #}
 {% spaceless %}
-    <div class="row">
-        <div class="col-md-12">
-            <table id="tbl_customer" class="display" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <th>Mã Khách Hàng</th>
-                    <th>Họ Tên Khách Hàng</th>
-                    <th>Địa Chỉ Khách Hàng</th>
-                    <th>Người Đại Diện</th>
-                    <th>Số Điện Thoại</th>
-                    <th>Loại Khách Hàng</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </thead>
-                {% for customer in list_customer %}
-                    <tr>
-                        <td>{{ customer.customer_code }}</td>
-                        <td>{{ customer.customer_name }}</td>
-                        <td>{{ customer.customer_address }}</td>
-                        <td>{{ customer.customer_represent }}</td>
-                        <td>{{ customer.customer_mobiphone }}</td>
-                        <td>
-                            {% if customer.customer_debt == 0 %}
-                                Công Nợ Ngày
-                            {% elseif customer.customer_debt == 1 %}
-                                Công Nợ Tuần
-                            {% elseif customer.customer_debt == 2 %}
-                                Công Nợ Tháng
-                            {% else %}
-                                Công Nợ Khác
-                            {% endif %}
-                        </td>
-                        <td>{{ customer.edit }}</td>
-                        <td>{{ customer.delete }}</td>
-                    </tr>
-                {% endfor %}
-                <tbody>
-                </tbody>
-            </table>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table id="table_customer"
+             data-toggle="table"
+             data-height="526"
+             data-pagination="true"
+             data-search="true"
+             data-page-list="[10, 25, 50, 100]"
+             data-url="{{ path('customer.list_customer') }}">
+        <thead>
+        <tr>
+          <th data-field="customer_code">Mã Khách Hàng</th>
+          <th data-field="customer_name">Họ Tên Khách Hàng</th>
+          <th data-field="customer_address">Địa Chỉ Khách Hàng</th>
+          <th data-field="customer_represent">Người Đại Diện</th>
+          <th data-field="employee_mobiphone">Số Điện Thoại</th>
+          <th data-field="customer_debt">Loại Khách Hàng</th>
+          <th data-field="edit"></th>
+          <th data-field="delete"></th>
+        </tr>
+        </thead>
+      </table>
     </div>
+  </div>
 {% endspaceless %}

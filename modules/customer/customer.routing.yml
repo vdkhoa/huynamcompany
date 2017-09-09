@@ -6,6 +6,14 @@ customer.list:
   requirements:
     _permission: 'customer list'
 
+customer.list_customer:
+  path: '/customer/list_customer'
+  defaults:
+    _controller: '\Drupal\customer\Controller\CustomerController::getListCustomer'
+    _title: 'Danh Sách Khách Hàng'
+  requirements:
+    _permission: 'customer list'
+
 customer.register:
   path: '/customer/register'
   defaults:

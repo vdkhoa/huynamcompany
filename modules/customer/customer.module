@@ -4,26 +4,25 @@
  * @file
  * This is the module sales.
  */
- 
+
 use Drupal\Core\Database\Database;
 use Drupal\Core\Form\FormStateInterface;
- 
+
 function customer_theme() {
- return [
-   'customer_register_form' => [
-     'render element' => 'form',
-   ],
-   'customer_update_form' => [
-     'render element' => 'form',
-   ],
-   'customer_delete_form' => [
-     'render element' => 'form',
-   ],
-   'customer_list' => [
+  return [
+    'customer_register_form' => [
+      'render element' => 'form',
+    ],
+    'customer_update_form' => [
+      'render element' => 'form',
+    ],
+    'customer_delete_form' => [
+      'render element' => 'form',
+    ],
+    'customer_list' => [
       'variables' => [
-        'list_customer' => NULL,
       ],
       'render element' => 'form',
     ],
- ];
+  ];
 }
