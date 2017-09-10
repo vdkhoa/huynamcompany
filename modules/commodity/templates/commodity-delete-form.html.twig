@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.commodity_code }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.commodity_name }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.commodity_price }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.submit }}
+      {{ form.cancel }}
+    </div>
+  </div>
+{% endspaceless %}

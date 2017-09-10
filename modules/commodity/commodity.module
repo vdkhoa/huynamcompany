@@ -4,19 +4,24 @@
  * @file
  * This is the module sales.
  */
- 
- use Drupal\Core\Database\Database;
- 
- function commodity_theme() {
+
+use Drupal\Core\Database\Database;
+
+function commodity_theme() {
   return [
-    'register_commodity_form' => [
+    'commodity_register_form' => [
       'render element' => 'form',
     ],
-    'update_commodity_form' => [
+    'commodity_update_form' => [
       'render element' => 'form',
     ],
-    'delete_commodity_form' => [
+    'commodity_delete_form' => [
+      'render element' => 'form',
+    ],
+    'commodity_index' => [
+      'variables' => [
+      ],
       'render element' => 'form',
     ],
   ];
- }
+}

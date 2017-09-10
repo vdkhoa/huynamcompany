@@ -2,3 +2,12 @@ commodity.style:
   css:
     theme:
       css/commodity.css: {}
+      ../../libraries/css/bootstrap-table/bootstrap-table.css: {}
+      ../../libraries/css/bootstrap-table/bootstrap-table.min.css: {}
+  js:
+    ../../libraries/js/bootstrap-table/bootstrap-table.js: {}
+    ../../libraries/js/bootstrap-table/bootstrap-table.min.js: {}
+    ../../libraries/js/bootstrap-table/bootstrap-table-vi-VN.js: {}
+    ../../libraries/js/bootstrap-table/bootstrap-table-vi-VN.min.js: {}
+  dependencies:
+    - core/jquery

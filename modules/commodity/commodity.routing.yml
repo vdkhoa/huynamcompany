@@ -1,7 +1,15 @@
-commodity.list-commodity:
-  path: '/commodity/list-commodity'
+commodity.index:
+  path: '/commodity/index'
   defaults:
-    _controller: '\Drupal\commodity\Controller\CommodityController::lstCommodity'
+    _controller: '\Drupal\commodity\Controller\CommodityController::index'
+    _title: 'Danh Sách Hàng Hóa'
+  requirements:
+    _permission: 'access content'
+
+commodity.list:
+  path: '/commodity/list'
+  defaults:
+    _controller: '\Drupal\commodity\Controller\CommodityController::getListCommodity'
     _title: 'Danh Sách Hàng Hóa'
   requirements:
     _permission: 'access content'

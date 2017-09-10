@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ */
+#}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-12">
+      <table id="table_commodity"
+             data-toggle="table"
+             data-height="526"
+             data-pagination="true"
+             data-search="true"
+             data-page-list="[10, 25, 50, 100]"
+             data-url="{{ path('commodity.list') }}">
+        <thead>
+        <tr>
+          <th data-field="commodity_code">Mã Hàng Hóa</th>
+          <th data-field="commodity_name">Tên Hàng Hóa</th>
+          <th data-field="commodity_price">Đơn Giá</th>
+          <th data-field="edit"></th>
+          <th data-field="delete"></th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+{% endspaceless %}

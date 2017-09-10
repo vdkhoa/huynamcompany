@@ -5,33 +5,33 @@
  * Create table hn_commodity
  */
 
- function commodity_schema() {
-  $schema['commodity'] = array(
-    'fields' => array(
-      'id'=>array(
-        'type'=>'serial',
+function commodity_schema() {
+  $schema['commodity'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
         'not null' => TRUE,
-      ),
-      'commodity_code'=>array(
+      ],
+      'commodity_code' => [
         'type' => 'varchar',
         'length' => 10,
         'not null' => TRUE,
-      ),
-      'commodity_name'=>array(
+      ],
+      'commodity_name' => [
         'type' => 'varchar',
         'length' => 50,
         'not null' => TRUE,
-      ),
-      'commodity_price'=>array(
+      ],
+      'commodity_price' => [
         'type' => 'int',
         'not null' => FALSE,
-      ),
-    ),
-    'primary key' => array('id'),
-    'unique keys' => array(
-      'uk_commodity_commodity_code' => array('commodity_code')
-    )
-  );
-  
+      ],
+    ],
+    'primary key' => ['id'],
+    'unique keys' => [
+      'uk_commodity_commodity_code' => ['commodity_code'],
+    ],
+  ];
+
   return $schema;
- }
+}
