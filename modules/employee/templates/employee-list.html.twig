@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+<script type="text/javascript">
+</script>
+{% spaceless %}
+  <div class="row">
+    <div>
+      <table id="table_employee"
+             data-toggle="table"
+             data-height="460"
+             data-pagination="true"
+             data-search="true"
+             data-url="{{ path('employee.list_employee') }}">
+        <thead>
+        <tr>
+          <th data-field="employee_code">Mã Nhân Viên</th>
+          <th data-field="employee_name">Họ Tên Nhân Viên</th>
+          <th data-field="employee_address">Địa Chỉ Nhân Viên</th>
+          <th data-field="employee_birthday">Ngày Sinh</th>
+          <th data-field="employee_gender">Giới Tính</th>
+          <th data-field="employee_mobiphone">Số Điện Thoại</th>
+          <th data-field="employee_regency">Chức Vụ</th>
+          <th data-field="edit"></th>
+          <th data-field="delete"></th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+{% endspaceless %}

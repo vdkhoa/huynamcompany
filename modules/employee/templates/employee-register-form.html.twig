@@ -1,0 +1,73 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-3">
+     <label class="control-label form-required">Mã Nhân Viên:</label>
+    </div>
+    <div class="col-md-6">
+     {{ form.employee_code }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+     <label class="control-label form-required">Họ Tên Nhân Viên:</label>
+    </div>
+    <div class="col-md-6">
+     {{ form.employee_name }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+     <label class="control-label">Địa Chỉ Nhân Viên:</label>
+    </div>
+    <div class="col-md-6">
+     {{ form.employee_address }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+     <label class="control-label">Năm Sinh:</label>
+    </div>
+    <div class="col-md-6">
+     {{ form.employee_birthday }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+     <label class="control-label">Giới Tính:</label>
+    </div>
+    <div class="col-md-6">
+     {{ form.employee_gender }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+     <label class="control-label">Số Điện Thoại:</label>
+    </div>
+    <div class="col-md-6">
+     {{ form.employee_mobiphone }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+     <label class="control-label">Chức Vụ:</label>
+    </div>
+    <div class="col-md-6">
+     {{ form.employee_regency }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      {{ form.submit }}
+    </div>
+  </div>
+{% endspaceless %}

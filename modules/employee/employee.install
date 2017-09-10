@@ -12,33 +12,45 @@
         'type'=>'serial',
         'not null' => TRUE,
       ),
-      'employee_code'=>array(
+      'employee_code'=> [
         'type' => 'varchar',
         'length' => 10,
         'not null' => TRUE,
-      ),
+        'description' => "Mã Nhân Viên",
+      ],
       'employee_name'=>array(
         'type' => 'varchar',
         'length' => 50,
         'not null' => TRUE,
+        'description' => "Họ Tên Nhân Viên",
       ),
       'employee_address'=>array(
         'type' => 'varchar',
+        'description' => "Địa Chỉ Nhân Viên",
         'length' => 255,
         'not null' => FALSE,
         ),
       'employee_birthday'=>array(
         'type' => 'varchar',
+        'description' => "Ngày Sinh",
         'length' => 8,
         'not null' => FALSE,
       ),
       'employee_gender'=>array(
         'type' => 'varchar',
+        'description' => "Giới Tính",
         'length' => 10,
         'not null' => FALSE,
       ),
       'employee_mobiphone'=>array(
         'type' => 'varchar',
+        'description' => "Số Điện Thoại",
+        'length' => 30,
+        'not null' => FALSE,
+      ),
+      'employee_regency'=>array(
+        'type' => 'varchar',
+        'description' => "Chức Vụ",
         'length' => 30,
         'not null' => FALSE,
       ),

@@ -1,7 +1,15 @@
-employee.list-employee:
-  path: '/employee/list-employee'
+employee.list:
+  path: '/employee/list'
   defaults:
     _controller: '\Drupal\employee\Controller\EmployeeController::lstEmployee'
+    _title: 'Danh Sách Nhân Viên'
+  requirements:
+    _permission: 'access content'
+
+employee.list_employee:
+  path: '/employee/list_employee'
+  defaults:
+    _controller: '\Drupal\employee\Controller\EmployeeController::getListEmployee'
     _title: 'Danh Sách Nhân Viên'
   requirements:
     _permission: 'access content'
@@ -9,7 +17,7 @@ employee.list-employee:
 employee.register:
   path: '/employee/register'
   defaults:
-    _form: '\Drupal\employee\Form\RegisterEmployeeForm'
+    _form: '\Drupal\employee\Form\EmployeeRegisterForm'
     _title: 'Đăng Ký Nhân Viên Mới'
   requirements:
     _access: 'TRUE'
@@ -17,7 +25,7 @@ employee.register:
 employee.update:
   path: '/employee/update/{id}'
   defaults:
-    _form: '\Drupal\employee\Form\UpdateEmployeeForm'
+    _form: '\Drupal\employee\Form\EmployeeUpdateForm'
     _title: 'Cập Nhật Thông Tin Nhân Viên'
   requirements:
     _access: 'TRUE'
@@ -25,7 +33,7 @@ employee.update:
 employee.delete:
   path: '/employee/delete/{id}'
   defaults:
-    _form: '\Drupal\employee\Form\DeleteEmployeeForm'
+    _form: '\Drupal\employee\Form\EmployeeDeleteForm'
     _title: 'Xóa Thông Tin Nhân Viên'
   requirements:
     _access: 'TRUE'

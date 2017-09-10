@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.employee_code }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.employee_name }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.employee_address }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.employee_birthday }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.employee_gender }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.employee_mobiphone }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.employee_regency }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.submit }}
+      {{ form.cancel }}
+    </div>
+  </div>
+{% endspaceless %}

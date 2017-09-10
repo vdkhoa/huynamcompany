@@ -4,13 +4,24 @@
  * @file
  * This is the module sales.
  */
- 
- use Drupal\Core\Database\Database;
- 
- function employee_theme() {
+
+use Drupal\Core\Database\Database;
+
+function employee_theme() {
   return [
-    'register_employee_form' => [
+    'employee_register_form' => [
+      'render element' => 'form',
+    ],
+    'employee_update_form' => [
+      'render element' => 'form',
+    ],
+    'employee_delete_form' => [
+      'render element' => 'form',
+    ],
+    'employee_list' => [
+      'variables' => [
+      ],
       'render element' => 'form',
     ],
   ];
- }
+}
