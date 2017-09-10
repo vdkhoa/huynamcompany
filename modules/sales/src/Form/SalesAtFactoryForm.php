@@ -47,27 +47,26 @@ class SalesAtFactoryForm extends FormBase {
     ];
 
     $form['commodity_code_1'] = [
-      '#type' => 'select',
-      '#title' => t('Tên Hàng Hóa:'),
-      '#required' => TRUE,
-      '#options' => $lstCommodity,
+      '#type' => 'textfield',
+      '#title' => t('Loại Đá:'),
+      '#disabled' => TRUE,
+      '#default_value' => 'MI',
     ];
 
     $form['sales_quantity_1'] = [
       '#type' => 'textfield',
       '#title' => t('Số Lượng:'),
-      '#required' => TRUE,
     ];
 
     $form['sales_price_1'] = [
       '#type' => 'textfield',
       '#title' => t('Đơn Giá:'),
-      '#required' => TRUE,
     ];
 
     $form['commodity_code_2'] = [
-      '#type' => 'select',
-      '#options' => $lstCommodity,
+      '#type' => 'textfield',
+      '#default_value' => 'BIA',
+      '#disabled' => TRUE,
     ];
 
     $form['sales_quantity_2'] = [
@@ -79,8 +78,9 @@ class SalesAtFactoryForm extends FormBase {
     ];
 
     $form['commodity_code_3'] = [
-      '#type' => 'select',
-      '#options' => $lstCommodity,
+      '#type' => 'textfield',
+      '#default_value' => 'XAY',
+      '#disabled' => TRUE,
     ];
 
     $form['sales_quantity_3'] = [
@@ -92,8 +92,9 @@ class SalesAtFactoryForm extends FormBase {
     ];
 
     $form['commodity_code_4'] = [
-      '#type' => 'select',
-      '#options' => $lstCommodity,
+      '#type' => 'textfield',
+      '#default_value' => 'BE CAT',
+      '#disabled' => TRUE,
     ];
 
     $form['sales_quantity_4'] = [
@@ -105,8 +106,9 @@ class SalesAtFactoryForm extends FormBase {
     ];
 
     $form['commodity_code_5'] = [
-      '#type' => 'select',
-      '#options' => $lstCommodity,
+      '#type' => 'textfield',
+      '#default_value' => 'RUOU',
+      '#disabled' => TRUE,
     ];
 
     $form['sales_quantity_5'] = [
