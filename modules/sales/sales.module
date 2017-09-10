@@ -9,7 +9,7 @@
  
  function sales_theme() {
   return [
-    'register_sales_form' => [
+    'sales_at_factory_form' => [
       'render element' => 'form',
     ],
   ];

@@ -19,8 +19,7 @@
         'not null' => TRUE,
       ),
       'sales_date' => array(
-        'type' => 'datetime',
-        'pgsql_type' => 'timestamp',
+        'mysql_type' => 'datetime',
         'not null' => TRUE,
       ),
       'commodity_code' => array(
@@ -72,13 +71,11 @@
         'default' => 0,
       ),
       'create_date' => array(
-        'type' => 'datetime',
-        'pgsql_type' => 'timestamp',
+        'mysql_type' => 'datetime',
         'not null' => TRUE,
       ),
       'update_date' => array(
-        'type' => 'datetime',
-        'pgsql_type' => 'timestamp',
+        'mysql_type' => 'datetime',
         'not null' => FALSE,
       ),
     ),

@@ -6,10 +6,10 @@ sales.statistics:
   requirements:
     _permission: 'access content'
 
-sales.register:
-  path: '/sales/register'
+sales.at_factory:
+  path: '/sales/at-factory'
   defaults:
-    _form: '\Drupal\sales\Form\RegisterSalesForm'
+    _form: '\Drupal\sales\Form\SalesAtFactoryForm'
     _title: 'Bán Hàng'
   requirements:
     _access: 'TRUE'
