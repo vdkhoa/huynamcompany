@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+<script type="text/javascript">
+</script>
+{% spaceless %}
+  <div class="row">
+    <div>
+      <table id="tbl_nhan_vien"
+             data-toggle="table"
+             data-height="460"
+             data-pagination="true"
+             data-search="true"
+             data-url="{{ path('nhan_vien.get_danh_sach_nhan_vien') }}">
+        <thead>
+        <tr>
+          <th data-field="ma_nhan_vien">Mã Nhân Viên</th>
+          <th data-field="ho_ten_nhan_vien">Họ Tên Nhân Viên</th>
+          <th data-field="dia_chi_nhan_vien">Địa Chỉ Nhân Viên</th>
+          <th data-field="ngay_sinh_nhan_vien">Ngày Sinh</th>
+          <th data-field="gioi_tinh_nhan_vien">Giới Tính</th>
+          <th data-field="so_dien_thoai_nhan_vien">Số Điện Thoại</th>
+          <th data-field="chuc_vu_nhan_vien">Chức Vụ</th>
+          <th data-field="edit"></th>
+          <th data-field="delete"></th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+{% endspaceless %}

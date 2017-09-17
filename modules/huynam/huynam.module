@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * This is the module sales.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Form\FormStateInterface;
+
+function huynam_theme() {
+  return [
+    'dang_ky_khach_hang_form' => [
+      'template' => 'khach-hang/dang-ky-khach-hang-form',
+      'render element' => 'form',
+    ],
+    'cap_nhat_khach_hang_form' => [
+      'template' => 'khach-hang/cap-nhat-khach-hang-form',
+      'render element' => 'form',
+    ],
+    'xoa_khach_hang_form' => [
+      'template' => 'khach-hang/xoa-khach-hang-form',
+      'render element' => 'form'
+    ],
+    'danh_sach_khach_hang' => [
+      'template' => 'khach-hang/danh-sach-khach-hang',
+      'variables' => [],
+      'render element' => 'form',
+    ],
+    'form_dang_ky_nhan_vien' => [
+      'template' => 'nhan-vien/form-dang-ky-nhan-vien',
+      'render element' => 'form',
+    ],
+    'form_cap_nhat_nhan_vien' => [
+      'template' => 'nhan-vien/form-cap-nhat-nhan-vien',
+      'render element' => 'form',
+    ],
+    'form_xoa_nhan_vien' => [
+      'template' => 'nhan-vien/form-xoa-nhan-vien',
+      'render element' => 'form'
+    ],
+    'danh_sach_nhan_vien' => [
+      'template' => 'nhan-vien/danh-sach-nhan-vien',
+      'variables' => [],
+      'render element' => 'form',
+    ],
+  ];
+}

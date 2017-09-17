@@ -1,0 +1,150 @@
+<?php
+
+/**
+ * @file
+ * Create tables
+ */
+
+ function huynam_schema() {
+  $schema['nhan_vien'] = array(
+    'fields' => array(
+      'id'=>array(
+        'type'=>'serial',
+        'not null' => TRUE,
+      ),
+      'ma_nhan_vien'=> [
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+        'description' => "Mã Nhân Viên",
+      ],
+      'ho_ten_nhan_vien'=>array(
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+        'description' => "Họ Tên Nhân Viên",
+      ),
+      'dia_chi_nhan_vien'=>array(
+        'type' => 'varchar',
+        'description' => "Địa Chỉ Nhân Viên",
+        'length' => 255,
+        'not null' => FALSE,
+        ),
+      'ngay_sinh_nhan_vien'=>array(
+        'type' => 'varchar',
+        'description' => "Ngày Sinh",
+        'length' => 8,
+        'not null' => FALSE,
+      ),
+      'gioi_tinh_nhan_vien'=>array(
+        'type' => 'varchar',
+        'description' => "Giới Tính",
+        'length' => 10,
+        'not null' => FALSE,
+      ),
+      'so_dien_thoai_nhan_vien'=>array(
+        'type' => 'varchar',
+        'description' => "Số Điện Thoại",
+        'length' => 30,
+        'not null' => FALSE,
+      ),
+      'chuc_vu_nhan_vien'=>array(
+        'type' => 'varchar',
+        'description' => "Chức Vụ",
+        'length' => 30,
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'uk_nhan_vien_ma_nhan_vien' => array('ma_nhan_vien')
+    )
+  );
+
+   $schema['khach_hang'] = [
+     'fields' => [
+       'id' => [
+         'type' => 'serial',
+         'not null' => TRUE,
+       ],
+       'ma_khach_hang' => [
+         'type' => 'varchar',
+         'length' => 10,
+         'description' => "Mã khách hàng",
+         'not null' => TRUE,
+       ],
+       'ten_khach_hang' => [
+         'type' => 'varchar',
+         'length' => 50,
+         'description' => "Tên quán",
+         'not null' => TRUE,
+       ],
+       'dia_chi_khach_hang' => [
+         'type' => 'varchar',
+         'length' => 255,
+         'description' => "Địa chỉ khách hàng",
+         'not null' => FALSE,
+       ],
+       'nguoi_dai_dien' => [
+         'type' => 'varchar',
+         'length' => 255,
+         'description' => "Họ tên người đại diện",
+         'not null' => FALSE,
+       ],
+       'so_dien_thoai_khach_hang' => [
+         'type' => 'varchar',
+         'length' => 30,
+         'description' => "Số điện thoại khách hàng",
+         'not null' => FALSE,
+       ],
+       'loai_cong_no' => [
+         'type' => 'int',
+         'description' => "Loại công nợ",
+         'default' => 0,
+         'not null' => TRUE,
+       ],
+       'loai_khach_hang' => [
+         'type' => 'int',
+         'description' => "Loại khách hàng",
+         'not null' => FALSE,
+         'default' => 0,
+       ],
+     ],
+     'primary key' => ['id'],
+     'unique keys' => [
+       'uk_khach_hang_ma_khach_hang' => ['ma_khach_hang'],
+     ],
+   ];
+
+   $schema['hang_hoa'] = [
+     'fields' => [
+       'id' => [
+         'type' => 'serial',
+         'not null' => TRUE,
+         'description' => "Mã hàng hóa",
+       ],
+       'ma_hang_hoa' => [
+         'type' => 'varchar',
+         'length' => 10,
+         'not null' => TRUE,
+       ],
+       'ten_hang_hoa' => [
+         'type' => 'varchar',
+         'length' => 50,
+         'not null' => TRUE,
+         'description' => "Tên hàng hóa",
+       ],
+       'don_gia_ban' => [
+         'type' => 'int',
+         'not null' => FALSE,
+         'description' => "Đơn giá bán",
+       ],
+     ],
+     'primary key' => ['id'],
+     'unique keys' => [
+       'uk_hang_hoa_ma_hang_hoa' => ['ma_hang_hoa'],
+     ],
+   ];
+  
+  return $schema;
+ }

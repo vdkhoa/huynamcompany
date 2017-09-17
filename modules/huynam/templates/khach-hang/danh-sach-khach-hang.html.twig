@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ */
+#}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-12">
+      <table id="tbl_khach_hang"
+             data-toggle="table"
+             data-height="526"
+             data-pagination="true"
+             data-search="true"
+             data-page-list="[10, 25, 50, 100]"
+             data-url="{{ path('khach_hang.get_danh_sach_khach_hang') }}">
+        <thead>
+        <tr>
+          <th data-field="ma_khach_hang">Mã Khách Hàng</th>
+          <th data-field="ten_khach_hang">Tên Khách Hàng</th>
+          <th data-field="dia_chi_khach_hang">Địa Chỉ Khách Hàng</th>
+          <th data-field="nguoi_dai_dien">Người Đại Diện</th>
+          <th data-field="so_dien_thoai_khach_hang">Số Điện Thoại</th>
+          <th data-field="loai_cong_no">Công Nợ</th>
+          <th data-field="loai_khach_hang">Loại Khách Hàng</th>
+          <th data-field="edit"></th>
+          <th data-field="delete"></th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+{% endspaceless %}

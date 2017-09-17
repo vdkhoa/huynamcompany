@@ -1,0 +1,14 @@
+bootstrap-table.style:
+  css:
+    theme:
+      css/bootstrap-table/bootstrap-table.min.css: {}
+  js:
+    js/bootstrap-table/bootstrap-table.min.js: {}
+    js/bootstrap-table/bootstrap-table-vi-VN.min.js: {}
+  dependencies:
+    - core/jquery
+
+huynam.style:
+  css:
+    theme:
+      css/huynam.css: {}

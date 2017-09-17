@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.ma_khach_hang }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.ten_khach_hang }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.dia_chi_khach_hang }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.nguoi_dai_dien }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.so_dien_thoai_khach_hang }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <td>
+        {{ form.loai_cong_no }}
+      </td>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <td>
+        {{ form.loai_khach_hang }}
+      </td>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.submit }}
+      {{ form.cancel }}
+    </div>
+  </div>
+{% endspaceless %}

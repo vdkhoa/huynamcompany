@@ -1,0 +1,80 @@
+#=======KHÁCH HÀNG=======#
+khach_hang.danh_sach_khach_hang:
+  path: '/khach-hang/danh-sach-khach-hang'
+  defaults:
+    _controller: '\Drupal\huynam\Controller\KhachHangController::danhSachKhachHang'
+    _title: 'Danh Sách Khách Hàng'
+  requirements:
+    _permission: 'Danh Sách Khách Hàng'
+
+khach_hang.get_danh_sach_khach_hang:
+  path: '/khach-hang/get-danh-sach-khach-hang'
+  defaults:
+    _controller: '\Drupal\huynam\Controller\KhachHangController::getDanhSachKhachHang'
+    _title: 'Get Danh Sách Khách Hàng'
+  requirements:
+    _permission: 'Danh Sách Khách Hàng'
+
+khach_hang.dang_ky_khach_hang:
+  path: '/khach-hang/dang-ky-khach-hang'
+  defaults:
+    _form: '\Drupal\huynam\Form\DangKyKhachHangForm'
+    _title: 'Đăng Ký Khách Hàng'
+  requirements:
+    _permission: 'Đăng Ký Khách Hàng'
+
+khach_hang.cap_nhat_khach_hang:
+  path: '/khach-hang/cap-nhat-thong-tin-khach-hang/{id}'
+  defaults:
+    _form: '\Drupal\huynam\Form\CapNhatKhachHangForm'
+    _title: 'Cập Nhật Thông Tin Khách Hàng'
+  requirements:
+    _permission: 'Cập Nhật Khách Hàng'
+
+khach_hang.xoa_khach_hang:
+  path: '/khach-hang/xoa-thong-tin-khach-hang/{id}'
+  defaults:
+    _form: '\Drupal\huynam\Form\XoaKhachHangForm'
+    _title: 'Xóa Thông Tin Khách Hàng'
+  requirements:
+    _permission: 'Xóa Thông Tin Khách Hàng'
+#=======NHÂN VIÊN=======#
+nhan_vien.danh_sach_nhan_vien:
+  path: '/nhan-vien/danh-sach-nhan-vien'
+  defaults:
+    _controller: '\Drupal\huynam\Controller\NhanVienController::danhSachNhanVien'
+    _title: 'Danh Sách Nhân Viên'
+  requirements:
+    _permission: 'Danh Sách Nhân Viên'
+
+nhan_vien.get_danh_sach_nhan_vien:
+  path: '/nhan-vien/get-danh-sach-nhan-vien'
+  defaults:
+    _controller: '\Drupal\huynam\Controller\NhanVienController::getDanhSachNhanVien'
+    _title: 'Get Danh Sách Nhân Viên'
+  requirements:
+    _permission: 'Danh Sách Nhân Viên'
+
+nhan_vien.dang_ky_nhan_vien:
+  path: '/nhan-vien/dang-ky-nhan-vien'
+  defaults:
+    _form: '\Drupal\huynam\Form\FormDangKyNhanVien'
+    _title: 'Đăng Ký Nhân Viên'
+  requirements:
+    _permission: 'Đăng Ký Nhân Viên'
+
+nhan_vien.cap_nhat_nhan_vien:
+  path: '/nhan-vien/cap-nhat-thong-tin-nhan-vien/{id}'
+  defaults:
+    _form: '\Drupal\huynam\Form\FormCapNhatNhanVien'
+    _title: 'Cập Nhật Thông Tin Nhân Viên'
+  requirements:
+    _permission: 'Cập Nhật Nhân Viên'
+
+nhan_vien.xoa_nhan_vien:
+  path: '/nhan-vien/xoa-thong-tin-nhan-vien/{id}'
+  defaults:
+    _form: '\Drupal\huynam\Form\FormXoaNhanVien'
+    _title: 'Xóa Thông Tin Nhân Viên'
+  requirements:
+    _permission: 'Xóa Thông Tin Nhân Viên'

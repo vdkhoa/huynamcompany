@@ -1,0 +1,9 @@
+.select-wrapper, .form-item {
+  padding-bottom: 5px;
+}
+.form-type-date {
+  padding-right: 5px;
+}
+.btn-primary {
+  margin-left: 5px;
+}

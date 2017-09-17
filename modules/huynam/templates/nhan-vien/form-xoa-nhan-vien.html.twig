@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.ma_nhan_vien }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.ho_ten_nhan_vien }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.dia_chi_nhan_vien }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.ngay_sinh_nhan_vien }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.gioi_tinh_nhan_vien }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.so_dien_thoai_nhan_vien }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.chuc_vu_nhan_vien }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.submit }}
+      {{ form.cancel }}
+    </div>
+  </div>
+{% endspaceless %}
