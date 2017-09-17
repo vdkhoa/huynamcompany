@@ -1,0 +1,92 @@
+{#
+/**
+ * @file
+ * 
+ */
+#}
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+{% spaceless %}
+  <div class="row">
+    <div class="col-md-6">
+     {{ form.so_hoa_don }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+     <label class="control-label form-required">Ngày Bán:</label>
+    </div>
+    <div class="col-md-6">
+      {{ form.ngay_ban }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+     <label class="control-label form-required">Khách Hàng:</label>
+    </div>
+    <div class="col-md-4">
+      {{ form.ma_khach_hang}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      {{ form.ma_hang_hoa_1 }}
+    </div>
+    <div class="col-md-3">
+      {{ form.so_luong_1 }}
+    </div>
+    <div class="col-md-3">
+      {{ form.don_gia_1 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      {{ form.ma_hang_hoa_2 }}
+    </div>
+    <div class="col-md-3">
+      {{ form.so_luong_2 }}
+    </div>
+    <div class="col-md-3">
+      {{ form.don_gia_2 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      {{ form.ma_hang_hoa_3 }}
+    </div>
+    <div class="col-md-3">
+      {{ form.so_luong_3 }}
+    </div>
+    <div class="col-md-3">
+      {{ form.don_gia_3 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      {{ form.ma_hang_hoa_4 }}
+    </div>
+    <div class="col-md-3">
+      {{ form.so_luong_4 }}
+    </div>
+    <div class="col-md-3">
+      {{ form.don_gia_4 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      {{ form.ma_hang_hoa_5 }}
+    </div>
+    <div class="col-md-3">
+      {{ form.so_luong_5 }}
+    </div>
+    <div class="col-md-3">
+      {{ form.don_gia_5 }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form.submit }}
+    </div>
+  </div>
+{% endspaceless %}

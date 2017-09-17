@@ -145,6 +145,99 @@
        'uk_hang_hoa_ma_hang_hoa' => ['ma_hang_hoa'],
      ],
    ];
+
+   $schema['ban_hang'] = array(
+     'fields' => array(
+       'id'=>array(
+         'type' => 'serial',
+         'not null' => TRUE,
+       ),
+       'so_hoa_don' => array(
+         'type' => 'numeric',
+         'precision' => 10,
+         'scale' => 0,
+         'not null' => TRUE,
+         'description' => "Số hóa đơn",
+       ),
+       'ngay_ban' => array(
+         'mysql_type' => 'datetime',
+         'not null' => TRUE,
+         'description' => "Ngày bán",
+       ),
+       'ma_hang_hoa' => array(
+         'type' => 'varchar',
+         'length' => 10,
+         'not null' => TRUE,
+         'description' => "Mã hàng hóa",
+       ),
+       'so_luong' => array(
+         'type' => 'int',
+         'not null' => TRUE,
+         'description' => "Số lượng bán",
+       ),
+       'don_gia' => array(
+         'type' => 'int',
+         'not null' => TRUE,
+         'description' => "Đơn giá bán",
+       ),
+       'ma_khach_hang'=>array(
+         'type' => 'varchar',
+         'length' => 10,
+         'not null' => TRUE,
+         'description' => "Mã khách hàng",
+       ),
+       'ma_nhan_vien' => array(
+         'type' => 'varchar',
+         'length' => 255,
+         'not null' => TRUE,
+         'description' => "Nhân viên bán hàng",
+       ),
+       'chuyen_hang' => array(
+         'type' => 'varchar',
+         'length' => 255,
+         'not null' => FALSE,
+         'description' => "Chuyến hàng",
+       ),
+       'tai_xe' => array(
+         'type' => 'varchar',
+         'length' => 10,
+         'not null' => FALSE,
+         'description' => "Tài xế giao hàng",
+       ),
+       'ma_nhan_vien_giao_hang_1' => array(
+         'type' => 'varchar',
+         'length' => 10,
+         'not null' => FALSE,
+         'description' => "Nhân viên giao hàng 1",
+       ),
+       'ma_nhan_vien_giao_hang_2' => array(
+         'type' => 'varchar',
+         'length' => 10,
+         'not null' => FALSE,
+         'description' => "Nhân viên giao hàng 2",
+       ),
+       'delete_flg' => array(
+         'type' => 'int',
+         'not null' => FALSE,
+         'default' => 0,
+         'description' => "Xóa đơn bán hàng (0: active, 1: inactive)",
+       ),
+       'create_date' => array(
+         'mysql_type' => 'datetime',
+         'not null' => TRUE,
+         'description' => "Ngày tạo hóa đơn",
+       ),
+       'update_date' => array(
+         'mysql_type' => 'datetime',
+         'not null' => FALSE,
+         'description' => "Ngày cập nhật hóa đơn",
+       ),
+     ),
+     'primary key' => array('id'),
+     'unique keys' => array(
+       'uk_ban_hang_1' => array('so_hoa_don', 'ngay_ban', 'ma_hang_hoa')
+     )
+   );
   
   return $schema;
  }

@@ -44,5 +44,9 @@ function huynam_theme() {
       'variables' => [],
       'render element' => 'form',
     ],
+    'form_ban_le' => [
+      'template' => 'ban-hang/form-ban-le',
+      'render element' => 'form',
+    ],
   ];
 }

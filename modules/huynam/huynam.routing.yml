@@ -78,3 +78,12 @@ nhan_vien.xoa_nhan_vien:
     _title: 'Xóa Thông Tin Nhân Viên'
   requirements:
     _permission: 'Xóa Thông Tin Nhân Viên'
+
+#=======BÁN HÀNG=======#
+ban_hang.ban_le:
+  path: '/ban-hang/ban-le'
+  defaults:
+    _form: '\Drupal\huynam\Form\FormBanLe'
+    _title: 'Bán Lẻ'
+  requirements:
+    _permission: 'Bán Lẻ'
